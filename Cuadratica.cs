@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Desafio2Cuadratica
+namespace DesafioCuadratica
 {
     class Program
     {
-        
-
         static void Main(string[] args)
         {
             Console.Write("Calculadora de ecuaciones cuadraticas ");
@@ -19,41 +17,29 @@ namespace Desafio2Cuadratica
             double b = double.Parse(Console.ReadLine());
             Console.Write("Ingrese c: ");
             double c = double.Parse(Console.ReadLine());
-
             //Discriminante
-            double dis = Math.Pow(b, 2) -4*a*c;
-            Console.Write(" El Discriminante es: " + dis);
-
-
-            // me toco divinir en pedazos para que funcionara 
-            double raiz = Math.Sqrt(dis);
-            //Console.WriteLine("raiz: " + raiz);
-            double num1 = -(b) + raiz;
-            //Console.WriteLine("numerador1: " + num1);
-            double num2 = -(b) - raiz;
-            //Console.WriteLine("numerador2: " + num2);
-            double deno = 2*a;
-            //Console.WriteLine("denominador: " + deno);
-
+            double dis = Math.Pow(b, 2) - 4 * a * c;
+            Console.Write("dis: " + dis);
             //Posibles soluciones 
-            double x1 = num1 / deno;
-            double x2 = num2 / deno;     
-            
+            double x1 = (-b + (Math.Sqrt(dis))) / (2 * a);
+            double x2 = (-b - (Math.Sqrt(dis))) / (2 * a);
+
+
             if (dis == 0)
             {
-                Console.WriteLine(" La solucion exite y es unica " );
-                Console.Write(" La solucion uno es: " + x1   );
-                Console.Write(" La solucion dos es: " + x2   );
+                Console.WriteLine(" La solucion exite y es unica ");
+                Console.Write(" La solucion uno es: " + x1);
+                Console.Write(" La solucion dos es: " + x2);
             }
             else if (dis > 0)
             {
-                Console.WriteLine("Existen dos posibles soluciones" );
-                Console.Write("La solucion uno es: " + x1     );
-                Console.Write("La solucion dos es: " + x2     );
+                Console.WriteLine("Existen dos posibles soluciones");
+                Console.Write("La solucion uno es: " + x1);
+                Console.Write("La solucion dos es: " + x2);
             }
             else if (dis < 0)
             {
-                Console.WriteLine(" No es posible calcular la solucion!! " );
+                Console.WriteLine(" No es posible calcular la solucion!! ");
             }
         }
     }
